@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,400&family=Outfit:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <h1 class="site-title">Weather Dashboard</h1>
+    </header>
+
+    <div class="app-wrapper">
+
+        <aside class="sidebar">
+            <div class="search-block">
+                <label class="search-label" for="search-city">City</label>
+                <div class="search-row">
+                    <input
+                        type="text"
+                        id="search-city"
+                        placeholder="Search a city…"
+                        autocomplete="off"
+                    >
+                    <button id="search-button" aria-label="Search">→</button>
+                </div>
+            </div>
+
+            <div class="history-block">
+                <div class="history-header">
+                    <span class="history-title">Recent</span>
+                    <button id="clear-history" class="clear-btn">Clear</button>
+                </div>
+                <ul class="city-list list-group"></ul>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <section class="current-card" id="current-weather">
+                <h2 id="current-city" class="city-name">—</h2>
+
+                <!-- New Date Line -->
+                <p
+                    id="current-date"
+                    style="color: var(--muted); margin-bottom: 0.5rem; font-weight: 500;"
+                ></p>
+
+                <div class="divider"></div>
+
+                <div class="stat-row">
+                    <div class="stat">
+                        <span class="stat-label">Temperature</span>
+                        <span class="stat-value" id="temperature">—</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Humidity</span>
+                        <span class="stat-value" id="humidity">—</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Wind Speed</span>
+                        <span class="stat-value" id="wind-speed">—</span>
+                    </div>
+                    <!-- Swapped UV for AQI -->
+                    <div class="stat">
+                        <span class="stat-label">Air Quality (AQI)</span>
+                        <span class="stat-value" id="aqi-value">—</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="forecast-section" id="future-weather">
+                <h3 class="forecast-title">5-Day Forecast</h3>
+                <div class="forecast-grid">
+                    <div class="forecast-card">
+                        <p class="f-date" id="fDate0"></p>
+                        <p class="f-icon" id="fImg0"></p>
+                        <p class="f-temp" id="fTemp0"></p>
+                    </div>
+                    <div class="forecast-card">
+                        <p class="f-date" id="fDate1"></p>
+                        <p class="f-icon" id="fImg1"></p>
+                        <p class="f-temp" id="fTemp1"></p>
+                    </div>
+                    <div class="forecast-card">
+                        <p class="f-date" id="fDate2"></p>
+                        <p class="f-icon" id="fImg2"></p>
+                        <p class="f-temp" id="fTemp2"></p>
+                    </div>
+                    <div class="forecast-card">
+                        <p class="f-date" id="fDate3"></p>
+                        <p class="f-icon" id="fImg3"></p>
+                        <p class="f-temp" id="fTemp3"></p>
+                    </div>
+                    <div class="forecast-card">
+                        <p class="f-date" id="fDate4"></p>
+                        <p class="f-icon" id="fImg4"></p>
+                        <p class="f-temp" id="fTemp4"></p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
